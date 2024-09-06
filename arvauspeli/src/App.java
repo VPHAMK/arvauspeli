@@ -10,19 +10,25 @@ public class App {
 
         do
         {
-            System.out.println("Arvaa nimi");
+            System.out.println("Arvaa nimi (kirjoita loppu lopettaaksesi)");
             arvaus = in.nextLine();
 
             if(arvaus.equals(vastaus))
             {
-                System.out.println("Oikein");
+                System.out.println("Oikein!");
                 System.out.println("Arvasit " + arvaukset + " kertaa.");
+            }
+
+            else if(arvaus.equals("loppu"))
+            {
+                System.exit(0);
             }
             
             else
             {
+                System.out.println("Väärin. Vihje:");
+                System.out.println(vastaus.substring(0, arvaukset));
                 arvaukset++;
-                System.out.println("hävisit");
             }
             
         }
